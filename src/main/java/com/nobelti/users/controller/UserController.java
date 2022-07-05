@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers(@RequestParam(name = "gender",required = false) String gender,
-                                               @RequestParam(name = "age", required = false) Integer age) throws InvalidRequestException {
+                                               @RequestParam(name = "age", required = false) Integer age) {
         return ResponseEntity.ok(userService.getUsers(gender, age));
     }
 
