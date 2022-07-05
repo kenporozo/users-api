@@ -36,8 +36,6 @@ public class UsersApplication {
             stateService.insertState(new State(null, "ACTIVATED"));
             stateService.insertState(new State(null, "INACTIVATED"));
 
-            State stateActivated = stateService.findByState("ACTIVATED");
-
             roleService.insertRole(new Role(null, "ROLE_USER"));
             roleService.insertRole(new Role(null, "ROLE_ADMIN"));
 
@@ -51,7 +49,7 @@ public class UsersApplication {
                     Gender.FEMALE,
                     "barbara@mail.com",
                     "1234",
-                    stateActivated,
+                    null,
                     List.of(roleUser)
             ));
 
@@ -62,7 +60,7 @@ public class UsersApplication {
                     Gender.MALE,
                     "jonayker@mail.com",
                     "1234",
-                    stateActivated,
+                    null,
                     List.of(roleUser,roleAdmin)
             ));
         };
